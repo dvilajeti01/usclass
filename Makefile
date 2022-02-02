@@ -10,6 +10,5 @@ down:
 # Modules support
 
 tidy:
-	go version
 	go mod tidy
 	go mod vendor

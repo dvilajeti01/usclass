@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/ardanlabs/service/foundation/logger"
+	"github.com/dvilajeti01/usclass/foundation/logger"
 	"go.uber.org/zap"
 )
 
@@ -29,8 +29,8 @@ func main() {
 }
 
 func run(log *zap.SugaredLogger) error {
-	log.Infow("startup", "hi my logging is working")
-	defer log.Infow("startup", "now I'm shutting down")
+	log.Infow("startup", "msg", "hi my logging is working")
+	defer log.Infow("startup", "msg", "now I'm shutting down")
 
 	shutdown := make(chan os.Signal, 1)
 	signal.Notify(shutdown, syscall.SIGINT, syscall.SIGTERM)
